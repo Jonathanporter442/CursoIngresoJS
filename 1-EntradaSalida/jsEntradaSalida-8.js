@@ -7,14 +7,14 @@ function SacarResto()
     var numero1;
     var numero2;
     var resto;
-    numero1 = document.getElementById("numeroDividendo").Value;
+    numero1 = document.getElementById("numeroDividendo").value;
     numero2 = document.getElementById("numeroDivisor").value;
 
 
     numero1 = parseInt(numero1);
     numero2 = parseInt(numero2);
 
-    resto = numero1 / numero2
+    resto = numero1 % numero2;
     alert("el resto es : " +resto);
     
 
