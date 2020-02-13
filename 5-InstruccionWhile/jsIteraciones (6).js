@@ -8,7 +8,7 @@ function mostrar()
 
 {
 	acumulador = prompt("ingrese un numero");
-	acumulador = parseInt(contador);
+	acumulador = parseInt(acumulador);
 	suma = suma + acumulador
 	contador = contador + 1
 
@@ -25,7 +25,7 @@ function mostrar()
 }
 
 	document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/5;
+  	document.getElementById('promedio').value=acumulador/5;
 
 
 	
