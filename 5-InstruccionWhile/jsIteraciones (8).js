@@ -7,7 +7,7 @@ function mostrar()
 	var respuesta='si';
 	var numero=0;
 
-	while (respuesta=="si")
+	while (respuesta!="no")
 	{
 	numero = prompt("elija un numero");
 	numero = parseInt(numero);
@@ -19,7 +19,7 @@ function mostrar()
 	{
       negativo = negativo * numero;
 	 }
-	respuesta=prompt("si quiere continuar escriba SI, si usted no quiere continuar entonces coloque otra cosa");
+	respuesta=prompt("si quiere continuar escriba si, si usted no quiere continuar entonces coloque no");
 	contador=contador+1
 	}
 
