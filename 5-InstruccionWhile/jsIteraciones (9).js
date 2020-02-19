@@ -21,8 +21,7 @@ function mostrar()
 		}
 		  else if(maximo<numerodelusuario)
 		  
-		  {
-			
+		  {aaaa
 			maximo=numerodelusuario;
 
 		  }

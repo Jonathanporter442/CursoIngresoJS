@@ -10,7 +10,7 @@ function mostrar()
 	acumulador = prompt("ingrese un numero");
 	acumulador = parseInt(acumulador);
 	suma = suma + acumulador
-	contador = contador + 1
+	contador = contador ++;
 
 
 
