@@ -19,9 +19,11 @@ function mostrar()
 	var diferencia ;
 	var Parestotales ;
 	var contador = 0;
-
+    var flag0 = 0;
+	var flag1 = 0;
+   
 	
-   do
+	do
 	{
 		
 	numero = prompt("elija un numero") ;
@@ -37,8 +39,10 @@ function mostrar()
 		cantPositivos = cantPositivos + 1 ;
 
 		resto = numero % 2 ;
+		
+		flag0 = 1;
 
-		contador++;
+		//contador++;
 	}
 		 else if (resto==0)
 		{
@@ -53,7 +57,9 @@ function mostrar()
 		  
 		  resto = numero % 2 ;
 		
-		  contador++;
+		 flag1 = 1; 
+		 
+		  //contador++;
 		 
 		  if (resto==0)
 		  {
