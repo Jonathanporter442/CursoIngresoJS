@@ -7,21 +7,35 @@ function mostrar()
 	var respuesta='si';
 	var numero=0;
 
-	while (respuesta!="no")
-	{
-	numero = prompt("elija un numero");
-	numero = parseInt(numero);
-	if(numero>0){
-		positivo = positivo + numero;
-	}
-	 else if (numero<0)
-	 
-	{
-      negativo = negativo * numero;
-	 }
-	respuesta=prompt("si quiere continuar escriba si, si usted no quiere continuar entonces coloque no");
-	contador=contador+1
-	}
+do{
+
+	numero= parseInt(prompt("Ingrese un numero : "));
+
+while(isNaN(numero)){
+	numero = parseInt(prompt("Eso no es un numero. Ingrese otro"))
+}
+if(numero>=0){
+
+	positivo = positivo + numero;
+}
+else{
+
+	negativo = negativo * numero;
+
+     contador++;
+}
+	 respuesta = prompt("quiere ingresar otro numero ?");
+	
+}while(respuesta=="si");
+
+if (contador == 0 ){
+	negativo = 0;
+}
+
+
+
+
+
 
 document.getElementById('suma').value=positivo;
 document.getElementById('producto').value=negativo;
