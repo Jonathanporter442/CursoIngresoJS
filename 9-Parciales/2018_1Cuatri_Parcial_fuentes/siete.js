@@ -4,17 +4,20 @@ var nota=0;
 var sexo;
 var respuesta;
 var contador = 0;
-do{
+
+
+
+
+for(contador = 0;contador<5;contador++)
+{
 nota = parseInt(prompt("Ingrese la nota entre el 0 y el 10"));
+while(nota<0 && nota >10)
+{
+alert("nota incorrecta.vuelva a ingresarlo") } 
+
 sexo =prompt("Ingrese el sexo. Para femenino escriba f y  para masculino m.");
-if (isNaN(nota))
-{
-  alert("Eso no es una nota vuelva a escribirla por favor ");
-
-}
-if(sexo!=f && sexo!=m)
-{
-  alert("Eso no es un sexo por favor ingrese f o m");
+while (sexo!="f" && sexo !="m"){
+  alert("sexo incorrecto, por favor use f o m")
 }
 
 
@@ -26,8 +29,16 @@ if(sexo!=f && sexo!=m)
 
 
 
-respuesta=prompt("si quiere continuar escribiendo escriba si, caso contraio escriba no");
-}while(respuesta=="si")
+
+
+
+
+
+
+
+
+
+}
 
 
 

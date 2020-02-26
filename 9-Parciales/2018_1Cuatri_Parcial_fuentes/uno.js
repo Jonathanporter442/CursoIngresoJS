@@ -12,7 +12,7 @@ function mostrar()
     
     perimetro = (ancho + largo)* 2;
     
-    alert("El perimetro del triangulo es :" + perimetro);
+    alert("El perimetro del rectangulo es :" + perimetro);
     
 
 }

@@ -8,68 +8,160 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
-{
- var lamparitas;
+
+/*{
  var marca;
- var precio;
+ var precio=35;
+ var precioDescuento;
  var cantidad;  
  var IIBB;	
-
+ var precioFinal;
+cantidad = parseInt(document.getElementById("Cantidad").value);
 marca = document.getElementById("Marca").value;
 
-lamparitas = document.getElementById("Cantidad").value;
-
-lamparitas = parseInt(lamparitas);
+if(cantidad>=1){
 
 if (cantidad>=6)
 {
-precio -= (precio * 50 )/100;
+precioDescuento =precio * 50 /100;
+precio= precio - precioDescuento;
 }
 else if (cantidad == 5)
 {
 if (marca=="ArgentinaLuz")
 {
-    precio-=(precio * 40) / 100;
+    precioDescuento=precio * 40 / 100;
+    precio = precio - precioDescuento;
 }
+
 else
 {
-    precio -= (precio * 30) / 100;
+    precioDescuento = (precio * 30) / 100;
+    precio = precio - precioDescuento;
 
 }
 }
 else if (cantidad == 4 && marca == "ArgentinaLuz" || "FelipeLamparas")
 {
-precio -= (precio * 25)/100;
+    precioDescuento = precio * 25/100;
+    precio = precio - precioDescuento;
 }
 else{
-    precio -= (precio * 20)/100;
+    precioDescuento = precio * 20/100;
+    precio = precio - precioDescuento;
 }
 
  if (cantidad == 3)
 {
     if (marca == "ArgentinaLuz")
     {
-      precio -= (precio * 15)/100;
+      precioDescuento = precio * 15/100;
+        precio = precio -precioDescuento;
     }
 }
 else if (marca == "FelipeLamparas")
 {
-    precio -=(precio * 10)/100
+    precioDescuento =precio * 10/100;
+    precio = precio - precioDescuento;
 }
 
 else{
-    precio-=(precio * 5)/100;
+    precioDescuento=precio * 5/100;
+    precio = precio - precioDescuento;
 }
-}
+document.getElementById("precioDescuento").value = precio;
+
+
 if (precio>120)
 {
-IIBB += (precio *10)/100;
-precio += (precio * 10)/100;
+IIBB = (precio *10)/100;
+precio = (precio * 10)/100;
 alert("Usted pago " +IIBB+ "de IIBB " );
+}else{
+    alert("El precio final es : " + precio);
+}
+}else{
+    alert("El dato es invalido por favor vuelva a ingresarlo");
+}
+function CalcularPrecio () 
+    var cantidad;
+    var marca;
+    var precio = 35;
+    var porcDescuento;
+    var descuento;
+    var IIBB;
+    var importeFinal;
+    var precioConDescuento;
+
+
+    cantidad = parseInt(document.getElementById("Cantidad").value);
+    marca = document.getElementById("Marca").value;
+
+    if (cantidad >= 1) {
+
+        switch (cantidad) {
+            case 1:
+            case 2:
+                porcDescuento = 0;
+                break;
+            case 3:
+                if (marca == "ArgentinaLuz") {
+                    porcDescuento = 15;
+                } else if (marca == "FelipeLamparas") {
+                    porcDescuento = 10;
+                } else {
+                    porcDescuento = 5;
+                }
+                break;
+            case 4:
+                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+                    porcDescuento = 25;
+                }
+                else {
+                    porcDescuento = 20;
+                }
+                break;
+            case 5:
+                if (marca == "ArgentinaLuz") {
+                    porcDescuento = 40;
+                }
+                else {
+                    porcDescuento = 30;
+                }
+                break;
+            default:
+                porcDescuento = 50;
+        }
+
+        // calculo el descuento
+        descuento = precio * porcDescuento / 100;
+        // al precio unitario le resto el descuento
+        precioConDescuento = precio - descuento;
+
+        // muestro el precio unitario en la caja inferior
+        document.getElementById("precioDescuento").value = precioConDescuento;
+
+        // ahora que ya se el precio de cada lampara
+        // calculo el total
+        importeFinal = precioConDescuento * cantidad;
+
+        if (importeFinal > 120) {
+            IIBB = importeFinal * 10 / 100;
+            importeFinal = importeFinal + IIBB;
+            alert("El importe final es $ " + importeFinal + "\nUsted pago $ " + IIBB + " de ingresos brutos");
+
+        } else {
+            alert("El importe final es $ " + importeFinal);
+        }
+
+    } else {
+        alert("No es una cantidad valida");
+    }
+
+
 }
 
-document.getElementById("precioDescuento").value = precio;
+
 
 
 
