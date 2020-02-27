@@ -1,24 +1,53 @@
 function mostrar()
 {
-var nota=0;
-var sexo;
-var respuesta;
-var contador = 0;
 
+  var nota;
+  var numero;
+  var sexo;
+  var contador;
+  var sexominimo;
+  var minimo;
 
-
-
-for(contador = 0;contador<5;contador++)
+  for(var i=0;i<=5;i++)
 {
-nota = parseInt(prompt("Ingrese la nota entre el 0 y el 10"));
-while(nota<0 && nota >10)
+  numero=parseInt(prompt("Ingrese un numero"));
+  while(isNaN(numero || numero<0 || numero >10))
+  {
+    numero=parseInt(prompt("Numero invalido,reingreselo"));
+  }
+
+  sexo=prompt("Ingrese el sexo").toLowerCase();
+  while(sexo !="f" && sexo != "m")
+  {
+    sexo=prompt("reingrese el sexo usando solo f o m ").toLowerCase();
+  }
+
+if (i==0 )
 {
-alert("nota incorrecta.vuelva a ingresarlo") } 
-
-sexo =prompt("Ingrese el sexo. Para femenino escriba f y  para masculino m.");
-while (sexo!="f" && sexo !="m"){
-  alert("sexo incorrecto, por favor use f o m")
+minimo=numero;
+sexominimo=sexo;
 }
+if(minimo>numero)
+{
+  minimo=numero;
+  sexominimo=sexo;
+}
+if(sexo=="m" && numero>=6)
+{
+  contador++;
+}
+nota=(contador+numero)/5;
+
+alert("El promedio de las notas es : " +nota);
+alert("La nota mas baja es : " +minim+ " y el sexo es : " +sexominimo);
+alert("La cantidad de varones que su nota es mayor o igual a 6 es :" +contador);
+
+
+
+
+
+
+
 
 
 
@@ -39,7 +68,6 @@ while (sexo!="f" && sexo !="m"){
 
 
 }
-
 
 
 
